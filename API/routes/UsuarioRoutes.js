@@ -58,4 +58,51 @@ router.post('/', async (req, res) => {
 });
 
 
+
+
+
+
+
+
+
+
+
+//PUT por ID
+router.put('/:id', async (req, res) => {
+    try {
+        const usuarios = await Usuario.findByIdAndUpdate(
+            req.params.id,
+            req.body, {
+            new: true,
+            runValidators: true
+        }
+        );
+
+        if (!usuarios) {
+            return res.status(404).json({ message: "Usuario no encontrado" + req.params.id });
+        }
+
+        res.json(
+            {
+                mensaje: "Usuario actualizado",
+                datos: usuarios
+            }
+        );
+
+        // {
+        //   "message": "usuario is not defined",
+        //   "otro": "errores"
+        // }
+
+
+    } catch (error) {
+        res.status(500).json({
+            message: error.message,
+            otro: "errores"
+        });
+    }
+});
+
+
+
 module.exports = router;
