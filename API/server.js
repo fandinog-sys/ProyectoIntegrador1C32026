@@ -18,6 +18,23 @@ app.get('/', (req, res) => {
 });
 
 
+app.use('/usuarios', require('./routes/UsuarioRoutes'));
+
+
+
+mongoose.connect(process.env.MONGO_URI).then(() => {
+    console.log('Connected to MongoDB');
+
+    app.listen(PORT, () => {
+        console.log(`Server is running on port http://localhost:${PORT}`);
+    })
+})
+    .catch((error) => {
+        console.error('Error connecting to MongoDB:', error.message);
+
+    });
+
+
 app.listen(PORT, () => {
     console.log(`Server is running on port http://localhost:${PORT}`);
 });
