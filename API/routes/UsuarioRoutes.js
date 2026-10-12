@@ -13,6 +13,33 @@ router.get('/', async (req, res) => {
 });
 
 
+//GET por ID
+router.get('/:id', async (req, res) => {
+    try {
+        const usuarios = await Usuario.findById(req.params.id);
+
+        if (!usuarios) {
+            return res.status(404).json({ message: "Usuario no encontrado" + req.params.id });
+        }
+
+        res.json(usuarios);
+
+        // {
+        //   "message": "usuario is not defined",
+        //   "otro": "errores"
+        // }
+
+
+    } catch (error) {
+        res.status(500).json({
+            message: error.message,
+            otro: "errores"
+        });
+    }
+});
+
+
+
 //POST
 
 router.post('/', async (req, res) => {
