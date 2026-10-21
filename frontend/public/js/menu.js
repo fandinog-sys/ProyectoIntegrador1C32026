@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const menu = document.getElementById("menu");
+  const menu = document.getElementById("menu");
 
-    if (!menu) return;
+  if (!menu) return;
 
-    menu.innerHTML = `
+  menu.innerHTML = `
       <nav class="navbar navbar-expand-sm navbar-light bg-light">
           <div class="container">
             <a class="navbar-brand" href="#">Proyecto Integrador</a>
@@ -35,6 +35,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 <li class="nav-item">
                   <a class="nav-link" href="productos.html">Productos</a>
                 </li>                
+
+                <li class="nav-item">
+                  <a class="nav-link" href="CrearCurso.html">Crear Curso</a>
+                </li>     
+
+                <li class="nav-item">
+                  <a class="nav-link" href="login.html">Login</a>
+                </li>     
+
+                
                 <li class="nav-item dropdown">
                   <a
                     class="nav-link dropdown-toggle"
