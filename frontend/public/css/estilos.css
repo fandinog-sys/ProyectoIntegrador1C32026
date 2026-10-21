@@ -1,0 +1,54 @@
+/* Estilos de formulario accesibles y validación tras interacción (:user-invalid / :user-valid) */
+.form-group-field {
+  margin-block-end: 1.25rem;
+}
+
+.form-group-field label {
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.hint {
+  display: block;
+  color: #5f6368;
+  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
+}
+
+.error-msg {
+  display: none;
+  color: #d93025;
+  font-size: 0.875rem;
+  margin-top: 0.3rem;
+}
+
+.form-control {
+  font-size: 1rem;
+  min-height: 48px;
+}
+
+.form-control:focus-visible {
+  outline: 3px solid #0b57d0;
+  outline-offset: 2px;
+}
+
+/* Mostrar estado inválido solo después de que el usuario interactuó con el campo */
+input.form-control:user-invalid,
+input.form-control.user-invalid-fallback {
+  border-color: #d93025;
+  background-color: #fce8e6;
+}
+
+input.form-control:user-invalid + .error-msg,
+input.form-control.user-invalid-fallback + .error-msg,
+.password-input-wrapper:has(input:user-invalid) + .error-msg,
+.password-input-wrapper:has(input.user-invalid-fallback) + .error-msg {
+  display: block;
+}
+
+input.form-control:user-valid,
+input.form-control.user-valid-fallback {
+  border-color: #188038;
+}
+

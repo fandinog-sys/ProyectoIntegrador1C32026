@@ -1,8 +1,7 @@
 <!doctype html>
-<html lang="en" data-bs-theme="light">
+<html lang="es" data-bs-theme="light">
   <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
+    <title>Inicio - Proyecto Integrador</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -13,20 +12,41 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="css/estilos.css" />
   </head>
 
   <body>
-    <div class="container">
-      <header>
-        <div id="menu">aca va el menu</div>
-      </header>
-      <main>
-        <h2>Dashboard inicio</h2>
-      </main>
-      <footer>
-        <!-- place footer here -->
-      </footer>
-    </div>
+    <header>
+      <div id="menu"></div>
+    </header>
+
+    <main class="container pb-5">
+      <h1 class="h2 mb-4">Dashboard Inicio</h1>
+      <div class="row g-4">
+        <div class="col-12 col-md-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h2 class="h5 card-title">Módulo de Usuarios</h2>
+              <p class="card-text text-muted">
+                Administra los usuarios registrados en el sistema (crear, listar, actualizar y eliminar).
+              </p>
+              <a href="usuarios.html" class="btn btn-primary">Ir a Usuarios</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h2 class="h5 card-title">Módulo de Productos</h2>
+              <p class="card-text text-muted">
+                Sección de productos del proyecto integrador.
+              </p>
+              <a href="productos.html" class="btn btn-outline-primary">Ir a Productos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- Bootstrap JavaScript Bundle (includes Popper) -->
     <script
@@ -34,8 +54,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-
-    <!-- agregamos un archivo que tenga el menu -->
     <script src="js/menu.js" defer></script>
   </body>
 </html>
