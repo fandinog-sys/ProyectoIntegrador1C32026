@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  const menu = document.getElementById("menu");
+    const menu = document.getElementById("menu");
 
-  if (!menu) return;
+    if (!menu) return;
 
-  menu.innerHTML = `
+    menu.innerHTML = `
       <nav class="navbar navbar-expand-sm navbar-light bg-light">
           <div class="container">
-            <a class="navbar-brand" href="#">Proyecto Integrador</a>
+            <a class="navbar-brand fw-bold" href="index.html">Proyecto Integrador</a>
             <button
               class="navbar-toggler d-lg-none"
               type="button"
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
               data-bs-target="#collapsibleNavId"
               aria-controls="collapsibleNavId"
               aria-expanded="false"
-              aria-label="Toggle navigation"
+              aria-label="Alternar navegación"
             >
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -23,28 +23,21 @@ document.addEventListener("DOMContentLoaded", function () {
               <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                 <li class="nav-item">
                   <a
-                    class="nav-link active"
+                    class="nav-link ${isActive("index.html")}"
                     href="index.html"
-                    aria-current="page"
-                    >Home <span class="visually-hidden">(current)</span></a
-                  >
+                    ${ariaCurrent("index.html")}
+                  >Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="usuarios.html">Usuarios</a>
+                  <a
+                    class="nav-link ${isActive("usuarios.html")}"
+                    href="usuarios.html"
+                    ${ariaCurrent("usuarios.html")}
+                  >Usuarios</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="productos.html">Productos</a>
                 </li>                
-
-                <li class="nav-item">
-                  <a class="nav-link" href="CrearCurso.html">Crear Curso</a>
-                </li>     
-
-                <li class="nav-item">
-                  <a class="nav-link" href="login.html">Login</a>
-                </li>     
-
-                
                 <li class="nav-item dropdown">
                   <a
                     class="nav-link dropdown-toggle"
@@ -61,22 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
                   </div>
                 </li>
               </ul>
-              <form class="d-flex my-2 my-lg-0">
-                <input
-                  class="form-control me-sm-2"
-                  type="text"
-                  placeholder="Search"
-                />
-                <button
-                  class="btn btn-outline-success my-2 my-sm-0"
-                  type="submit"
-                >
-                  Search
-                </button>
-              </form>
             </div>
           </div>
-        </nav>    
+        </nav>
     `;
-
 });
